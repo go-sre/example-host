@@ -1,0 +1,83 @@
+[
+  {
+    "Name": "host",
+    "Pattern": null,
+    "Traffic": "ingress",
+    "RateLimiter": {
+      "Limit": 100,
+      "Burst": 25,
+      "StatusCode": 429
+    }
+  },
+  {
+    "Name": "default-ingress",
+    "Pattern": null,
+    "Traffic": "ingress",
+    "Timeout": {
+      "Duration": "5s",
+      "StatusCode": 504
+    }
+  },
+  {
+    "Name": "pprof-index",
+    "Pattern": "/debug/pprof/",
+    "Traffic": "ingress"
+  },
+  {
+    "Name": "pprof-cmdLine",
+    "Pattern": "/debug/pprof/cmdline",
+    "Traffic": "ingress"
+  },
+  {
+    "Name": "pprof-profile",
+    "Pattern": "/debug/pprof/profile",
+    "Traffic": "ingress"
+  },
+  {
+    "Name": "pprof-symbol",
+    "Pattern": "/debug/pprof/symbol",
+    "Traffic": "ingress"
+  },
+  {
+    "Name": "pprof-trace",
+    "Pattern": "/debug/pprof/trace",
+    "Traffic": "ingress"
+  },
+  {
+    "Name": "google-search-ingress",
+    "Pattern": "/google",
+    "Traffic": "ingress",
+    "Timeout": {
+      "Duration": "5s",
+      "StatusCode": 504
+    }
+  },
+  {
+    "Name": "twitter-home-ingress",
+    "Pattern": "/twitter",
+    "Traffic": "ingress",
+    "Timeout": {
+      "Duration": "5s",
+      "StatusCode": 504
+    }
+  },
+  {
+    "Name": "facebook-home-ingress",
+    "Pattern": "/facebook",
+    "Traffic": "ingress",
+    "Timeout": {
+      "Duration": "5s",
+      "StatusCode": 504
+    }
+  },
+  {
+    "Name": "health-liveness",
+    "Pattern": "/health/liveness",
+    "Traffic": "ingress",
+    "Ping": true,
+    "Timeout": {
+      "Duration": "5s",
+      "StatusCode": 504
+    }
+  }
+]

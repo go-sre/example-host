@@ -1,0 +1,76 @@
+[
+  {
+    "Name": "facebook-home",
+    "Pattern": "www.facebook.com",
+    "Traffic": "egress",
+    "Timeout": {
+      "Duration": "5s",
+      "StatusCode": 504
+    },
+    "RateLimiter": {
+      "Limit": 100,
+      "Burst": 25,
+      "StatusCode": 503
+    }
+  },
+  {
+    "Name": "google-search",
+    "Pattern": "www.google.com",
+    "Traffic": "egress",
+    "Timeout": {
+      "Duration": "5s",
+      "StatusCode": 504
+    },
+    "RateLimiter": {
+      "Limit": 100,
+      "Burst": 25,
+      "StatusCode": 503
+    },
+    "Retry": {
+      "Limit": 100,
+      "Burst": 33,
+      "Wait": "3s",
+      "Codes": [
+        503,
+        504
+      ]
+    }
+  },
+  {
+    "Name": "google-home",
+    "Pattern": "google.com",
+    "Traffic": "egress",
+    "Timeout": {
+      "Duration": "500ms",
+      "StatusCode": 504
+    },
+    "RateLimiter": {
+      "Limit": 100,
+      "Burst": 25,
+      "StatusCode": 503
+    },
+    "Retry": {
+      "Limit": 100,
+      "Burst": 33,
+      "Wait": "45ms",
+      "Codes": [
+        503,
+        504
+      ]
+    }
+  },
+  {
+    "Name": "twitter-home",
+    "Pattern": "www.twitter.com",
+    "Traffic": "egress",
+    "Timeout": {
+      "Duration": "5s",
+      "StatusCode": 504
+    },
+    "RateLimiter": {
+      "Limit": 100,
+      "Burst": 25,
+      "StatusCode": 503
+    }
+  }
+]

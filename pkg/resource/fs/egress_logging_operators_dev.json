@@ -1,0 +1,50 @@
+[
+  {
+    "Value": "%START_TIME%"
+  },
+  {
+    "Value": "%DURATION%"
+  },
+  {
+    "Value": "%TRAFFIC%"
+  },
+  {
+    "Value": "%ROUTE_NAME%"
+  },
+  {
+    "Value": "%STATUS_CODE%"
+  },
+  {
+    "Value": "%METHOD%"
+  },
+  {
+    "Value": "%HOST%"
+  },
+  {
+    "Value": "%PATH%"
+  },
+  {
+    "Value": "%TIMEOUT_DURATION%"
+  },
+  {
+    "Value": "%RATE_LIMIT%"
+  },
+  {
+    "Value": "%RATE_BURST%"
+  },
+  {
+    "Value": "%RETRY"
+  },
+  {
+    "Value": "%RETRY_RATE_LIMIT%"
+  },
+  {
+    "Value": "%RETRY_RATE_BURST%"
+  },
+  {
+    "Value": "%FAILOVER%"
+  },
+  {
+    "Value": "%STATUS_FLAGS%"
+  }
+]

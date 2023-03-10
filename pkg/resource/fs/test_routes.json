@@ -1,0 +1,10 @@
+[
+  {
+    "Name": "test",
+    "Pattern": "twitter.com",
+    "Timeout": {
+      "Duration": 20000,
+      "StatusCode": 504
+    }
+  }
+]
