@@ -27,4 +27,4 @@ Imbedded file system containing all configuration information.
 
 Twitter home page.
 
-[examplepkg]: <https://pkg.go.dev/github.com/gotemplates/example-host>
+[examplepkg]: <https://pkg.go.dev/github.com/gotemplates/example-host/pkg>
