@@ -25,7 +25,7 @@ func Get[E runtime.ErrorHandler](ctx context.Context) ([]byte, *runtime.Status) 
 		return nil, e.HandleWithContext(ctx, homeLoc, err)
 	}
 	req.Header.Add("x-request-id", runtime.ContextRequestId(ctx))
-	resp, buf, status := exchange.DoT[E, []byte, exchange.Default](req)
+	resp, buf, status := exchange.Do[E, exchange.Default, []byte](req)
 	if !status.OK() {
 	} else {
 		status.SetMetadataFromResponse(resp, headers.ContentType)

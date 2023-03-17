@@ -29,7 +29,7 @@ func init() {
 	)
 }
 
-var searchTestCtx = runtime.ContextWithHttpExchange(context.Background(), searchTestProxy)
+var searchTestCtx = runtime.ContextWithProxy(context.Background(), searchTestProxy)
 
 func searchTestProxy(req *http.Request) (*http.Response, error) {
 	if req == nil || req.URL == nil {
@@ -84,22 +84,22 @@ func ExampleSearch_TestContent() {
 
 func ExampleSearch_HttpError() {
 	u, _ := url.Parse(searchUri)
-	buff, status := Search[runtime.DebugError](runtime.ContextWithHttpExchange(context.Background(), httptest.HttpErrorProxy), u)
+	buff, status := Search[runtime.DebugError](runtime.ContextWithProxy(context.Background(), httptest.HttpErrorProxy), u)
 	fmt.Printf("test: Search() -> [%v] [content:%v]\n", status, string(buff))
 
 	//Output:
-	//[[] github.com/idiomatic-go/motif/exchange/dot [http: connection has been hijacked]]
+	//[[] github.com/gotemplates/core/exchange/do [http: connection has been hijacked]]
 	//test: Search() -> [Internal] [content:]
 
 }
 
 func ExampleSearch_BodyIOError() {
 	u, _ := url.Parse(searchUri)
-	buff, status := Search[runtime.DebugError](runtime.ContextWithHttpExchange(context.Background(), httptest.BodyIOErrorProxy), u)
+	buff, status := Search[runtime.DebugError](runtime.ContextWithProxy(context.Background(), httptest.BodyIOErrorProxy), u)
 	fmt.Printf("test: Search() -> [%v] [content:%v]\n", status, string(buff))
 
 	//Output:
-	//[[] github.com/idiomatic-go/motif/exchange/deserialize [unexpected EOF]]
+	//[[] github.com/gotemplates/core/exchange/deserialize [unexpected EOF]]
 	//test: Search() -> [I/O Failure] [content:]
 
 }

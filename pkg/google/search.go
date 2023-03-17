@@ -27,7 +27,7 @@ func Search[E runtime.ErrorHandler](ctx context.Context, uri *url.URL) ([]byte, 
 		return nil, e.HandleWithContext(ctx, searchLocation, err)
 	}
 	req.Header.Add("x-request-id", runtime.ContextRequestId(ctx))
-	resp, buf, status := exchange.DoT[E, []byte, exchange.Default](req)
+	resp, buf, status := exchange.Do[E, exchange.Default, []byte](req)
 	if !status.OK() {
 
 	} else {
