@@ -1,6 +1,6 @@
 # example-host
 
-This example service uses the gotemplates/host and gotemplates/core to build a service that proxy's the home pages for Google search, Facebook, and Twitter.
+[Example-host][examplepkg] is a service utilizing the gotemplates/host and gotemplates/core to build a service that proxy's the home pages for Google search, Facebook, and Twitter.
 Controllers are configured for all ingress and egress routes. Acess logging is also configured.
 
 ## facebook
@@ -26,3 +26,5 @@ Imbedded file system containing all configuration information.
 ## twitter
 
 Twitter home page.
+
+[examplepkg]: <https://pkg.go.dev/github.com/gotemplates/example-host/pkg>
