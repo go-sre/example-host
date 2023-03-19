@@ -36,7 +36,7 @@ func initIngressControllers() []error {
 		return errs
 	}
 
-	controller.IngressTable.SetHttpMatcher(func(req *http.Request) (string, bool) {
+	controller.IngressTable().SetHttpMatcher(func(req *http.Request) (string, bool) {
 		if req == nil || req.URL == nil {
 			return "", false
 		}
@@ -76,7 +76,7 @@ func initEgressControllers() []error {
 		return errs
 	}
 
-	controller.EgressTable.SetHttpMatcher(func(req *http.Request) (string, bool) {
+	controller.EgressTable().SetHttpMatcher(func(req *http.Request) (string, bool) {
 		if req == nil || req.URL == nil {
 			return "", false
 		}

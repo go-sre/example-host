@@ -4,8 +4,8 @@ go 1.18
 
 require (
 	github.com/go-http-utils/headers v0.0.0-20181008091004-fed159eddc2a
-	github.com/gotemplates/core v0.0.0-20230317133627-a1964ea8616b
-	github.com/gotemplates/host v0.0.0-20230315124507-0d32d561fb8a
+	github.com/gotemplates/core v0.0.0-20230317161920-681c26ee58d8
+	github.com/gotemplates/host v0.0.0-20230319133415-eb9f20f0aaae
 )
 
 require (
