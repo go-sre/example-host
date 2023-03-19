@@ -38,7 +38,7 @@ func Startup[E runtime.ErrorHandler, O runtime.OutputHandler](mux *http.ServeMux
 		return mux, status
 	}
 
-	middleware2.ControllerWrapTransport(exchange.Client)
+	middleware2.ControllerWrapTransport(exchange.Client())
 	return middleware2.ControllerHttpHostMetricsHandler(mux, ""), status
 }
 
