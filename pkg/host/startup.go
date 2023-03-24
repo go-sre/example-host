@@ -1,16 +1,15 @@
 package host
 
 import (
-	"github.com/gotemplates/core/exchange"
-	"github.com/gotemplates/core/runtime"
-	"github.com/gotemplates/example-host/pkg/resource"
-	"github.com/gotemplates/host/accessdata"
-	"github.com/gotemplates/host/accesslog"
-	"github.com/gotemplates/host/controller"
-	"github.com/gotemplates/host/messaging"
-	middleware2 "github.com/gotemplates/host/middleware"
-	runtime2 "github.com/gotemplates/host/runtime"
-	//"github.com/idiomatic-go/resiliency/shared"
+	"github.com/go-sre/core/exchange"
+	"github.com/go-sre/core/runtime"
+	"github.com/go-sre/example-host/pkg/resource"
+	"github.com/go-sre/host/accessdata"
+	"github.com/go-sre/host/accesslog"
+	"github.com/go-sre/host/controller"
+	"github.com/go-sre/host/messaging"
+	middleware2 "github.com/go-sre/host/middleware"
+	runtime2 "github.com/go-sre/host/runtime"
 	"net/http"
 	"time"
 )

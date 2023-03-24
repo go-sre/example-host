@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
-	runtime2 "github.com/gotemplates/core/runtime"
-	"github.com/gotemplates/example-host/pkg/host"
-	"github.com/gotemplates/host/messaging"
+	runtime2 "github.com/go-sre/core/runtime"
+	"github.com/go-sre/example-host/pkg/host"
+	"github.com/go-sre/host/messaging"
 	"log"
 	"net/http"
 	"os"

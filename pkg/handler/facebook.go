@@ -1,9 +1,9 @@
 package handler
 
 import (
-	"github.com/gotemplates/core/exchange"
-	"github.com/gotemplates/core/runtime"
-	"github.com/gotemplates/example-host/pkg/facebook"
+	"github.com/go-sre/core/exchange"
+	"github.com/go-sre/core/runtime"
+	"github.com/go-sre/example-host/pkg/facebook"
 	"net/http"
 )
 

@@ -3,9 +3,9 @@ package host
 import (
 	"errors"
 	"fmt"
-	"github.com/gotemplates/example-host/pkg/resource"
-	"github.com/gotemplates/host/controller"
-	"github.com/gotemplates/host/runtime"
+	"github.com/go-sre/example-host/pkg/resource"
+	"github.com/go-sre/host/controller"
+	"github.com/go-sre/host/runtime"
 	"net/http"
 )
 

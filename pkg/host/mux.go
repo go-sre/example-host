@@ -1,7 +1,7 @@
 package host
 
 import (
-	"github.com/gotemplates/example-host/pkg/handler"
+	"github.com/go-sre/example-host/pkg/handler"
 	"net/http"
 	"net/http/pprof"
 )

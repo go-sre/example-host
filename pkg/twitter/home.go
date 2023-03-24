@@ -3,8 +3,8 @@ package twitter
 import (
 	"context"
 	"github.com/go-http-utils/headers"
-	"github.com/gotemplates/core/exchange"
-	"github.com/gotemplates/core/runtime"
+	"github.com/go-sre/core/exchange"
+	"github.com/go-sre/core/runtime"
 	"net/http"
 )
 

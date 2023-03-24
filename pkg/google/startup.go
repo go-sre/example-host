@@ -1,8 +1,8 @@
 package google
 
 import (
-	"github.com/gotemplates/core/runtime"
-	"github.com/gotemplates/host/messaging"
+	"github.com/go-sre/core/runtime"
+	"github.com/go-sre/host/messaging"
 	"reflect"
 	"sync/atomic"
 	"time"

@@ -3,10 +3,10 @@ package google
 import (
 	"context"
 	"fmt"
-	"github.com/gotemplates/core/exchange/httptest"
-	"github.com/gotemplates/core/runtime"
-	"github.com/gotemplates/host/controller"
-	"github.com/gotemplates/host/middleware"
+	"github.com/go-sre/core/exchange/httptest"
+	"github.com/go-sre/core/runtime"
+	"github.com/go-sre/host/controller"
+	"github.com/go-sre/host/middleware"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -21,9 +21,9 @@ import (
 func init() {
 	name := "google-search"
 	middleware.ControllerWrapTransport(nil)
-	controller.EgressTable.SetDefaultController(controller.NewRoute(controller.DefaultControllerName, "egress", "", false, controller.NewTimeoutConfig(time.Millisecond*2000, http.StatusGatewayTimeout)))
-	controller.EgressTable.AddController(controller.NewRoute(name, "egress", "", false))
-	controller.EgressTable.SetHttpMatcher(func(req *http.Request) (string, bool) {
+	controller.EgressTable().SetDefaultController(controller.NewRoute(controller.DefaultControllerName, "egress", "", false, controller.NewTimeoutConfig(time.Millisecond*2000, http.StatusGatewayTimeout)))
+	controller.EgressTable().AddController(controller.NewRoute(name, "egress", "", false))
+	controller.EgressTable().SetHttpMatcher(func(req *http.Request) (string, bool) {
 		return name, true
 	},
 	)
