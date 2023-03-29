@@ -5,13 +5,12 @@ import (
 	"fmt"
 	"github.com/go-sre/example-host/pkg/resource"
 	"github.com/go-sre/host/controller"
-	"github.com/go-sre/host/runtime"
 	"net/http"
 )
 
 const (
-	ingressRoutesNameFmt = "fs/ingress_routes_{env}.json"
-	egressRoutesNameFmt  = "fs/egress_routes_{env}.json"
+	ingressRoutesNameFmt = "fs/ingress_routes.json"
+	egressRoutesNameFmt  = "fs/egress_routes.json"
 )
 
 func initControllers() []error {
@@ -27,7 +26,7 @@ func initIngressControllers() []error {
 
 	errs := controller.InitIngressControllers(
 		func() ([]byte, error) {
-			return resource.ReadFile(runtime.EnvExpansion(ingressRoutesNameFmt))
+			return resource.ReadFile(ingressRoutesNameFmt)
 		},
 		func(routes []controller.Route) error {
 			return updateIngressLookup(lookup, routes)
@@ -67,7 +66,7 @@ func initEgressControllers() []error {
 
 	errs := controller.InitEgressControllers(
 		func() ([]byte, error) {
-			return resource.ReadFile(runtime.EnvExpansion(egressRoutesNameFmt))
+			return resource.ReadFile(egressRoutesNameFmt)
 		},
 		func(routes []controller.Route) error {
 			return updateEgressLookup(lookup, routes)
