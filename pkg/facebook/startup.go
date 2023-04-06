@@ -11,7 +11,7 @@ import (
 type pkg struct{}
 
 var (
-	Uri     = pkgPath
+	PkgUrl  = pkgPath
 	pkgPath = reflect.TypeOf(any(pkg{})).PkgPath()
 	c       = make(chan messaging.Message, 1)
 	started int64
@@ -20,7 +20,7 @@ var (
 func IsStarted() bool { return atomic.LoadInt64(&started) != 0 }
 
 func init() {
-	messaging.RegisterResource(Uri, c)
+	messaging.RegisterResource(PkgUrl, c)
 	go receive()
 }
 

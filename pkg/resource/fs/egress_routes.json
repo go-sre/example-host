@@ -4,10 +4,12 @@
     "Pattern": "www.facebook.com",
     "Traffic": "egress",
     "Timeout": {
+      "Enabled": true,
       "Duration": "5s",
       "StatusCode": 504
     },
     "RateLimiter": {
+      "Enabled": true,
       "Limit": 100,
       "Burst": 25,
       "StatusCode": 503
@@ -18,19 +20,22 @@
     "Pattern": "www.google.com",
     "Traffic": "egress",
     "Timeout": {
+      "Enabled": true,
       "Duration": "5s",
       "StatusCode": 504
     },
     "RateLimiter": {
+      "Enabled": true,
       "Limit": 100,
       "Burst": 25,
       "StatusCode": 503
     },
     "Retry": {
+      "Enabled": true,
       "Limit": 100,
       "Burst": 33,
       "Wait": "3s",
-      "Codes": [
+      "StatusCodes": [
         503,
         504
       ]
@@ -41,19 +46,22 @@
     "Pattern": "google.com",
     "Traffic": "egress",
     "Timeout": {
+      "Enabled": true,
       "Duration": "500ms",
       "StatusCode": 504
     },
     "RateLimiter": {
+      "Enabled": true,
       "Limit": 100,
       "Burst": 25,
       "StatusCode": 503
     },
     "Retry": {
+      "Enabled": true,
       "Limit": 100,
       "Burst": 33,
       "Wait": "45ms",
-      "Codes": [
+      "StatusCodes": [
         503,
         504
       ]
@@ -64,10 +72,12 @@
     "Pattern": "www.twitter.com",
     "Traffic": "egress",
     "Timeout": {
+      "Enabled": true,
       "Duration": "5s",
       "StatusCode": 504
     },
     "RateLimiter": {
+      "Enabled": true,
       "Limit": 100,
       "Burst": 25,
       "StatusCode": 503

@@ -24,11 +24,11 @@ func Startup[E runtime.ErrorHandler, O runtime.OutputHandler](mux *http.ServeMux
 	initOrigin()
 	err := initLogging()
 	if err != nil {
-		return nil, e.Handle("/host/startup/logging", err)
+		return nil, e.Handle(nil, "/host/startup/logging", err)
 	}
 	errs := initControllers()
 	if len(errs) > 0 {
-		return nil, e.Handle("/host/startup/controllers", errs...)
+		return nil, e.Handle(nil, "/host/startup/controllers", errs...)
 	}
 	initMux(mux)
 	status := startupResources[E, O]()
@@ -36,7 +36,7 @@ func Startup[E runtime.ErrorHandler, O runtime.OutputHandler](mux *http.ServeMux
 		return mux, status
 	}
 
-	middleware2.ControllerWrapTransport(exchange.Client())
+	middleware2.ControllerWrapTransport(exchange.Client)
 	return middleware2.ControllerHttpHostMetricsHandler(mux, ""), status
 }
 

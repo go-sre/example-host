@@ -21,7 +21,7 @@ import (
 func init() {
 	name := "google-search"
 	middleware.ControllerWrapTransport(nil)
-	controller.EgressTable().SetDefaultController(controller.NewRoute(controller.DefaultControllerName, "egress", "", false, controller.NewTimeoutConfig(time.Millisecond*2000, http.StatusGatewayTimeout)))
+	controller.EgressTable().SetDefaultController(controller.NewRoute(controller.DefaultControllerName, "egress", "", false, controller.NewTimeoutConfig(true, http.StatusGatewayTimeout, time.Millisecond*2000)))
 	controller.EgressTable().AddController(controller.NewRoute(name, "egress", "", false))
 	controller.EgressTable().SetHttpMatcher(func(req *http.Request) (string, bool) {
 		return name, true

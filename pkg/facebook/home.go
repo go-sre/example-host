@@ -22,7 +22,7 @@ func Get[E runtime.ErrorHandler](ctx context.Context) ([]byte, *runtime.Status) 
 	}
 	req, err := http.NewRequestWithContext(ctx, "GET", uri, nil)
 	if err != nil {
-		return nil, e.HandleWithContext(ctx, homeLoc, err)
+		return nil, e.Handle(ctx, homeLoc, err)
 	}
 	req.Header.Add("x-request-id", runtime.ContextRequestId(ctx))
 	resp, buf, status := exchange.Do[E, exchange.Default, []byte](req)

@@ -11,23 +11,23 @@ func Example_initIngressControllers() {
 	fmt.Printf("test: initIngressControllers() -> [err:%v]\n", errs)
 
 	ctrl := controller.IngressTable().Host()
-	c, _ := ctrl.RateLimiter()
+	c := ctrl.RateLimiter()
 	fmt.Printf("test: Ingress.Host() -> [controller:%v] [rateLimiter:%v]\n", ctrl.Name(), c != nil)
 
 	req, _ := http.NewRequest("", "https://www.google.com", nil)
 	ctrl = controller.IngressTable().LookupHttp(req)
-	c1, _ := ctrl.Timeout()
+	c1 := ctrl.Timeout()
 	fmt.Printf("test: Ingress.Lookup(https://www.google.com) -> [controller:%v] [timeout:%v]\n", ctrl.Name(), c1 != nil)
 
 	req, _ = http.NewRequest("", "https://www.google.com/google?q=test", nil)
 	ctrl = controller.IngressTable().LookupHttp(req)
-	c1, _ = ctrl.Timeout()
+	c1 = ctrl.Timeout()
 	fmt.Printf("test: Ingress.Lookup(https://www.google.com/google/search) -> [controller:%v] [timeout:%v]\n", ctrl.Name(), c1 != nil)
 
 	//Output:
 	//test: initIngressControllers() -> [err:[]]
 	//test: Ingress.Host() -> [controller:host] [rateLimiter:true]
-	//test: Ingress.Lookup(https://www.google.com) -> [controller:!] [timeout:false]
+	//test: Ingress.Lookup(https://www.google.com) -> [controller:!] [timeout:true]
 	//test: Ingress.Lookup(https://www.google.com/google/search) -> [controller:google-search-ingress] [timeout:true]
 
 }

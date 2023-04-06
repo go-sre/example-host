@@ -42,7 +42,7 @@
     "Value": "%RETRY_RATE_BURST%"
   },
   {
-    "Value": "%FAILOVER%"
+    "Value": "%PROXY%"
   },
   {
     "Value": "%STATUS_FLAGS%"
