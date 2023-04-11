@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/go-http-utils/headers v0.0.0-20181008091004-fed159eddc2a
 	github.com/go-sre/core v0.0.0-20230403183745-a454c738cec2
-	github.com/go-sre/host v0.0.0-20230406175523-b336626fd072
+	github.com/go-sre/host v0.0.0-20230407132048-2d1598e803d4
 )
 
 require (
