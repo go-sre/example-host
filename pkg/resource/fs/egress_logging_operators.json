@@ -33,13 +33,7 @@
     "Value": "%RATE_BURST%"
   },
   {
-    "Value": "%RETRY"
-  },
-  {
-    "Value": "%RETRY_RATE_LIMIT%"
-  },
-  {
-    "Value": "%RETRY_RATE_BURST%"
+    "Value": "%RETRY%"
   },
   {
     "Value": "%PROXY%"

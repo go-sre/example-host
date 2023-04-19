@@ -66,6 +66,7 @@ func main() {
 
 func displayRuntime[O runtime2.OutputHandler]() {
 	var o O
+	o.Write(fmt.Sprintf("addr : %v", addr))
 	o.Write(fmt.Sprintf("vers : %v", runtime.Version()))
 	o.Write(fmt.Sprintf("os   : %v", runtime.GOOS))
 	o.Write(fmt.Sprintf("arch : %v", runtime.GOARCH))

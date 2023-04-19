@@ -9,6 +9,7 @@ import (
 	"github.com/go-sre/host/controller"
 	"github.com/go-sre/host/messaging"
 	middleware2 "github.com/go-sre/host/middleware"
+	"golang.org/x/time/rate"
 	"net/http"
 	"time"
 )
@@ -71,8 +72,8 @@ func initLogging() error {
 	// log.Write[log.DebugOutputHandler, data.JsonFormatter](entry)
 	//},
 	//)
-	controller.SetLogFn(func(traffic string, start time.Time, duration time.Duration, req *http.Request, resp *http.Response, statusFlags string, controllerState map[string]string) {
-		entry := accessdata.NewEntry(traffic, start, duration, req, resp, statusFlags, controllerState)
+	controller.SetLogFn(func(traffic string, start time.Time, duration time.Duration, req *http.Request, resp *http.Response, routeName string, timeout int, limit rate.Limit, burst int, retry, proxy, statusFlags string) {
+		entry := accessdata.NewEntry(traffic, start, duration, req, resp, routeName, timeout, limit, burst, retry, proxy, statusFlags)
 		accesslog.Write[accesslog.DebugOutputHandler, accessdata.JsonFormatter](entry)
 	},
 	)

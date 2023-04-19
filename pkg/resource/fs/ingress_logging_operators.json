@@ -31,5 +31,8 @@
   },
   {
     "Value": "%RATE_BURST%"
+  },
+  {
+    "Value": "%STATUS_FLAGS%"
   }
 ]
